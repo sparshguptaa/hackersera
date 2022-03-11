@@ -1,0 +1,350 @@
+										
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">										
+<html xmlns="http://www.w3.org/1999/xhtml">										
+<head><meta http-equiv="X-UA-Compatible" content="IE=Edge" /><title>										
+"	People Involved in Care Roster"										
+</title><link href="../StyleSheet.css" type="text/css" rel="stylesheet" />										
+    										
+										
+    <script src="../javascript/jquery-1.7.1.min.js" type="text/javascript"></script>										
+										
+    <script type="text/javascript" src="../../javascript/jquery.tablesorter.min.js"></script>										
+										
+    <script src="../javascript/jquery.tablesorter.filer.js" type="text/javascript"></script>										
+										
+    <script src="../javascript/jquery.tablesorter.pager.js" type="text/javascript"></script>										
+										
+    <script src="../javascript/jquery.tablesorter-2.0.3.js" type="text/javascript"></script>										
+										
+    <script type="text/javascript" language="Javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>										
+										
+    <link href="../Content/css/select2.min.css" rel="stylesheet" type="text/css" /><link href="../StyleSheet.css" rel="stylesheet" type="text/css" />										
+    										
+										
+    <script src="../Content/js/select2.min.js" type="text/javascript"></script>										
+										
+    										
+</head>										
+										
+<body style="margin-left: 2px; margin-top: 0" class="PaddingT"> 										
+										
+   										
+    <script type="text/javascript">										
+        $(window).on('load'	 function () {									
+            BodyOnLoad();										
+        });										
+    //Added By Sachin(Finoit) End										
+        function BodyOnLoad() {										
+            setTimeout('ShowSessionTimeoutWarning()'	 '14700000');									
+            setTimeout('ShowSessionExpiredNotification()'	 '15000000');									
+         }										
+       										
+     function ShowSessionTimeoutWarning() {										
+										
+         alert('Your session expire in : 5 Minutes');										
+										
+     }										
+										
+										
+     function ShowSessionExpiredNotification() {										
+										
+         window.location = 'Error.aspx?Reason=Timeout';										
+     }										
+     function OpenWindowWithPost(url	 windowoption	 name	 params) {							
+         var form = document.createElement("form");										
+         form.setAttribute("method"	 "post");									
+         form.setAttribute("action"	 url);									
+         form.setAttribute("target"	 name);									
+         for (var i in params) {										
+             if (params.hasOwnProperty(i)) {										
+                 var input = document.createElement('input');										
+                 input.type = 'hidden';										
+                 input.name = i;										
+                 input.value = params[i];										
+                 form.appendChild(input);										
+             }										
+         }										
+										
+										
+         document.body.appendChild(form);										
+										
+         window.open("Main.aspx"	 name	 windowoption);								
+										
+         form.submit();										
+										
+         document.body.removeChild(form);										
+     }										
+										
+     function mailButtonClick() {										
+         var hf = document.getElementById("ctl00_UserIdHiddenField");										
+         var timezone = document.getElementById("ctl00_timezone");										
+         var params = { 'MsgUser_id': hf.value	 'Control_Name': 'inbox'	 'TimeZone': timezone.value };								
+         OpenWindowWithPost("https://goto.securechannelim.com/Pages/Main.aspx"										
+    "width=1330	height=850	resizable=yes	scrollbars=yes"							
+    "MessageForm"	 params);									
+     }										
+										
+    </script>										
+										
+    <form name="aspnetForm" method="post" action="PeopleInvolvedInCareRoster.aspx" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm" style="margin: 0; width: 100%; height: 100%; position: absolute">										
+<div>										
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />										
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />										
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTYzMzgyNjYxMQ9kFgJmD2QWAgIBD2QWBAIDD2QWBAIBD2QWAmYPDxYCHgRUZXh0ZWRkAgMPZBYCZg9kFgICAQ8PZBYCHgVzdHlsZQUYYmFja2dyb3VuZC1jb2xvcjpvcmFuZ2U7ZAIHD2QWAgIDDxAPFgYeDURhdGFUZXh0RmllbGQFDExvY2F0aW9uTmFtZR4ORGF0YVZhbHVlRmllbGQFAmlkHgtfIURhdGFCb3VuZGdkEBUXA0FsbBAxMDA2IEJ1c3RlciBCbHZkDUFETUlOSVNUUkFUT1IRQmlsbGFibGUgTG9jYXRpb24JQ29tbXVuaXR5EEN1bGluYXJ5IFByb2dyYW0LRGF5IFByb2dyYW0ERFRBMQpIb21lIFBsYWNlGkluZGVwZW5kZW50IFJlc291cmNlIFJhbmNoDElyZW5lIEhvbG1lcw1LYXJsIEhvbWVidXJnCExvY2F0aW9uJU1hcnkgTWVycnkgLSBNZW50YWwgSGVhbHRoIFByYWN0aW9uZXIPTWlubmVzb3RhIERyaXZlDVBhcmt3YXkgSG91c2UOU3QgUmVnaXMgRHJpdmUsVG9ueSBQcmFjdGlvbmVyIC0gTWVudGFsIEhlYWx0aCBQcmFjdGl0aW9uZXIOVk9DIEVtcGxveW1lbnQMV29yayBQbGFjZSAxE1plbGRhIEZpdHogR3VhcmRpYW4JSXJpcyBQYXJrCEtleWJvYXJkFRcBMAM0OTcEMTQyMgQxMDI1AzU2MgQxMDIzAjc1BDExMTIDMjgxAzYyNgM1NjcDNTY2AzQ5NQM1NjUDNDQzBDE0NjYDNTIyBDExMDkEMTAxNwMzMjIDODM0AzU2MwQxMDIyFCsDF2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZGRkJJykZGIx56NP4yVT9G8KU7O875A=" />										
+</div>										
+										
+<script type="text/javascript">										
+//<![CDATA[										
+var theForm = document.forms['aspnetForm'];										
+if (!theForm) {										
+    theForm = document.aspnetForm;										
+}										
+function __doPostBack(eventTarget	 eventArgument) {									
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {										
+        theForm.__EVENTTARGET.value = eventTarget;										
+        theForm.__EVENTARGUMENT.value = eventArgument;										
+        theForm.submit();										
+    }										
+}										
+//]]>										
+</script>										
+										
+										
+<script src="/WebResource.axd?d=HbEJDIRcEEGfGGzywac4eBqwvsSLNe_-cAGn9ppzmJgTq9wZJ-sYHaf4guaTG--ImgzEvwKhkRFe2gT-HeTeOhM8xaQ1&amp;t=637291136600000000" type="text/javascript"></script>										
+										
+										
+<script src="/ScriptResource.axd?d=RiSlZR9XiYPYttnh7KmgrJuGWQCFQsihX2yR9vMJHwlEEVMNwqznxLAoKUvnvyBK0oJTSHojIUb08qBcr2nP8h_QQcYy5HCKzHymYKAR2Jy_OwWkLCCkNTMAt-OKLPgiy6zLxyOSYaKyyk1BHF_pJq2DpMs1&amp;t=25fad681" type="text/javascript"></script>										
+<script src="/ScriptResource.axd?d=TpfX3KwMef3VvB6DyXW7i8sUvcLEinUjSBseb4lm7Pz5iisN1Lzf33iChveSmGGI-8C8quVhJjm4HGj7RgMchB0wtP3EpPbgYTo5WChXgDbc3JoWsLLoR8TCSKnjt4NcShBi2wJ8ayN7cxa7F_b8879cDZSaLBWHElSRC7D4Fb9ADZ1U0&amp;t=25fad681" type="text/javascript"></script>										
+<script type="text/javascript">										
+//<![CDATA[										
+function WebForm_OnSubmit() {										
+WebForm_ReEnableControls();										
+return true;										
+}										
+//]]>										
+</script>										
+										
+<div>										
+										
+"	<input type=""hidden"" name=""__VIEWSTATEGENERATOR"" id=""__VIEWSTATEGENERATOR"" value=""9E209A86"" />"										
+"	<input type=""hidden"" name=""__EVENTVALIDATION"" id=""__EVENTVALIDATION"" value=""/wEWKgLcovWbCQLC+JmvCgLf4cPJDgKnqq/jAgLPj+XpAwL8uKrXCAKf0uLICAKn+aaxAwL5naSYAgLi3fvfDgKwjbruCQLS36ueCAK5g+KjCAKImZeGBgLjuYjpDQKQ2NjJAwKs1vP8AwKs1oftCQKo1pPjDgKs1u+nCwL6ufTqDQK3wZ3hCQKwwenIBAK185q+CQKR2OTJAwK084q+CQLe6pyjDwLf6qijDwKEv/T+CAK489rkCQKo1uPjDgLa+PeCDAK3wf2ZDAKu1uPjDgLthdqJBQKFv+z+CAKs1sP8AwK8jfKKCwK9jfKKCwK+jfKKCwKz4tjkBwK5tdv5CRHdMbFvIuP0FjlHTqMjEFpKhFu6"" />"										
+</div>        										
+        <script type="text/javascript">										
+//<![CDATA[										
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1'	 document.getElementById('aspnetForm'));									
+Sys.WebForms.PageRequestManager.getInstance()._updateControls(['tctl00$UpdatePanel1']	 []	 []	 36000);							
+//]]>										
+</script>										
+										
+        <table cellspacing="0" cellpadding="0" width="100%" border="0" class="border">										
+            <tbody>										
+                <tr>										
+                    <td id="ctl00_tdMenuRow" valign="top" width="100%" align="center">										
+                        <table border="0" cellpadding="0" cellspacing="2" width="100%">										
+                            <tr>										
+                                <td colspan="2" style="height: 65px" class="ClsMenuTop">										
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">										
+                                        <tbody>										
+                                            <tr>										
+                                                <td id="ctl00_tdTable" style="width: 95%; height: 25px" align="center" valign="middle">										
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="Table1" style="height: 10">										
+                                                        <tr align="center">										
+                                                            <td width="100%" align="center">										
+                                                                <span id="ctl00_lblenvironment"></span>										
+                                                                <input name="ctl00$txtFlag" type="hidden" id="ctl00_txtFlag" />										
+                                                                <input name="ctl00$txtRole" type="hidden" id="ctl00_txtRole" value="1" />										
+                                                                <input name="ctl00$txtUserControls" type="hidden" id="ctl00_txtUserControls" />										
+                                                                <input name="ctl00$txtEmpScreenIds" type="hidden" id="ctl00_txtEmpScreenIds" value="	1	2	3	4	6	10	11	12	13	14
+                                                                <input name="ctl00$txtNonMedLabel" type="hidden" id="ctl00_txtNonMedLabel" value="FORMS" />										
+                                                                <input name="ctl00$txtIsAttendanceLocation" type="hidden" id="ctl00_txtIsAttendanceLocation" value="0" />										
+                                                                <input name="ctl00$txtCompanyIdExits" type="hidden" id="ctl00_txtCompanyIdExits" value="26" />										
+                                                                <input type="hidden" name="ctl00$timezone" id="ctl00_timezone" value="Central Standard Time" />										
+                                                                <input type="hidden" name="ctl00$UserIdHiddenField" id="ctl00_UserIdHiddenField" value="3643" />										
+                                                                  <input name="ctl00$hfClientReport" type="hidden" id="ctl00_hfClientReport" class="clsReport" value="65" />										
+                                                                <input name="ctl00$hftxtBillableService" type="hidden" id="ctl00_hftxtBillableService" value="Billable Service Charting   5" /> 										
+                                                                <script language="javascript" type="text/javascript" src="../scripts/xaramenuTemp.js"></script>										
+										
+                                                                <script language="javascript" type="text/javascript" src="../scripts/blueballsTemp.js?v=1"></script>										
+										
+                                                                <span class="lblFooter">Copyright Â© 2007-2021 Assisted Living Soft	 LLC.</span>									
+                                                                										
+                                                            </td>										
+                                                        </tr>										
+                                                    </table>										
+                                                </td>										
+										
+                                                <td style="width: 5%; height: 25px;" align="left">										
+                                                    <div style="margin-left: -190%; margin-top: -20%;">										
+                                                        <div id="ctl00_UpdatePanel1">										
+"	"										
+                                                                <input type="button" name="ctl00$MailButton" value="Messages" onclick="mailButtonClick();__doPostBack('ctl00$MailButton'	'')" id="ctl00_MailButton" Class="Msg_btn_class" style="background-color:orange;" />									
+                                                            										
+</div>										
+                                                    </div>										
+                                                </td>										
+                                                <td style="width: 5%; height: 25px" align="right">										
+                                                    <div class="top_seclogo" style="margin-right: 1%;">										
+										
+                                                        <script language="JavaScript" type="text/javascript">										
+                                                            SiteSeal("https://seal.networksolutions.com/images/confirmrecblue.gif"	 "NETSS"	 "none");								
+                                                        </script>										
+										
+                                                        <a href="#" onclick="window.open(&quot;https://seals.networksolutions.com/siteseal_seek/siteseal?v_shortname=NETSS&amp;v_querytype=W&amp;v_search=wbl.adaptivecss.net&amp;x=5&amp;y=5&quot;	&quot;NETSS&quot;	&quot;width=450	height=500	toolbar=no	location=no	directories=no	status=no	menubar=no	scrollbars=no	copyhistory=no
+                                                            <img src="https://seal.networksolutions.com/images/confirmrecblue.gif" style="border: none;"										
+                                                                alt="" oncontextmenu="alert('This SiteSeal is protected');return false;" />										
+                                                        </a>										
+                                                    </div>										
+                                                </td>										
+                                            </tr>										
+                                        </tbody>										
+                                    </table>										
+                                </td>										
+                            </tr>										
+                            <tr>										
+                                <td valign="top">										
+                                    <table style="width: 100%" cellpadding="0" cellspacing="0">										
+                                        <tr valign="top" style="width: 100%" class="ClsLoadingBG">										
+                                            <td align="center" colspan="2" style="padding-top: 2px;">										
+                                                <div id="ctl00_updateProgressMaster" style="display:none;">										
+"	"										
+                                                        <div style="width: 250px; margin: 5px">										
+                                                            <table>										
+                                                                <tr>										
+                                                                    <td>										
+                                                                        <img src="../images/Loading9.gif" alt="../images/Loading9.gif" />										
+                                                                    </td>										
+                                                                    <td valign="middle">										
+                                                                        <span class="LoadingTxt">Please wait...</span>										
+                                                                    </td>										
+                                                                </tr>										
+                                                            </table>										
+                                                        </div>										
+                                                    										
+</div>										
+                                            </td>										
+                                        </tr>										
+                                    </table>										
+                                </td>										
+                            </tr>										
+                        </table>										
+                    </td>										
+										
+                </tr>										
+                <tr style="width: 100%">										
+                    <td>										
+                        <div>										
+                            										
+										
+                            										
+    <div style="margin-top: 30px">										
+        <h3>People Involved in Care Roster</h3>										
+        <table>										
+            <tr>										
+                <td>										
+                    <span id="ctl00_PopupMainBody_txtRecords" tabindex="1" class="MsoTextbox">Location :</span>										
+                </td>										
+                <td>										
+                    <select name="ctl00$PopupMainBody$ddlLocations" id="ctl00_PopupMainBody_ddlLocations" tabindex="2" style="margin-left: 5px">										
+"	<option selected=""selected"" value=""0"">All</option>"										
+"	<option value=""497"">1006 Buster Blvd</option>"										
+"	<option value=""1422"">ADMINISTRATOR</option>"										
+"	<option value=""1025"">Billable Location</option>"										
+"	<option value=""562"">Community</option>"										
+"	<option value=""1023"">Culinary Program</option>"										
+"	<option value=""75"">Day Program</option>"										
+"	<option value=""1112"">DTA1</option>"										
+"	<option value=""281"">Home Place</option>"										
+"	<option value=""626"">Independent Resource Ranch</option>"										
+"	<option value=""567"">Irene Holmes</option>"										
+"	<option value=""566"">Karl Homeburg</option>"										
+"	<option value=""495"">Location</option>"										
+"	<option value=""565"">Mary Merry - Mental Health Practioner</option>"										
+"	<option value=""443"">Minnesota Drive</option>"										
+"	<option value=""1466"">Parkway House</option>"										
+"	<option value=""522"">St Regis Drive</option>"										
+"	<option value=""1109"">Tony Practioner - Mental Health Practitioner</option>"										
+"	<option value=""1017"">VOC Employment</option>"										
+"	<option value=""322"">Work Place 1</option>"										
+"	<option value=""834"">Zelda Fitz Guardian</option>"										
+"	<option value=""563"">Iris Park</option>"										
+"	<option value=""1022"">Keyboard</option>"										
+										
+</select>										
+                </td>										
+            </tr>										
+            <tr>										
+                <td valign="top">										
+                    <span id="ctl00_PopupMainBody_lblInclude" class="MSTheme-Label">Include :</span>										
+                </td>										
+                <td>										
+                    <table id="ctl00_PopupMainBody_rdlActiveInacitve" border="0">										
+"	<tr>"										
+"		<td><input id=""ctl00_PopupMainBody_rdlActiveInacitve_0"" type=""radio"" name=""ctl00$PopupMainBody$rdlActiveInacitve"" value=""1"" checked=""checked"" /><label for=""ctl00_PopupMainBody_rdlActiveInacitve_0"">Active clients only</label></td>"										
+"	</tr><tr>"										
+"		<td><input id=""ctl00_PopupMainBody_rdlActiveInacitve_1"" type=""radio"" name=""ctl00$PopupMainBody$rdlActiveInacitve"" value=""2"" /><label for=""ctl00_PopupMainBody_rdlActiveInacitve_1"">Inactive clients only</label></td>"										
+"	</tr><tr>"										
+"		<td><input id=""ctl00_PopupMainBody_rdlActiveInacitve_2"" type=""radio"" name=""ctl00$PopupMainBody$rdlActiveInacitve"" value=""3"" /><label for=""ctl00_PopupMainBody_rdlActiveInacitve_2"">All Clients</label></td>"										
+"	</tr>"										
+</table>										
+                </td>										
+            </tr>										
+        </table>										
+        <br />										
+        <input type="submit" name="ctl00$PopupMainBody$ExportToExcel" value="Export To Excel" id="ctl00_PopupMainBody_ExportToExcel" class="ClsBtn" style="margin-left: 10px" />										
+        										
+        										
+    </div>										
+										
+                        </div>										
+                    </td>										
+                </tr>										
+            </tbody>										
+        </table>										
+        <div id="cover">										
+            <div id="warning">										
+                <table>										
+                    <tr>										
+                        <td>										
+                            <img src="../Administrative/images/Loading9.gif" alt="Loading" />										
+                        </td>										
+                    </tr>										
+                    <tr>										
+                        <td valign="middle">										
+                            <span class="LoadingTxt">Working	 Please wait...</span>									
+                        </td>										
+                    </tr>										
+                </table>										
+            </div>										
+        </div>										
+    										
+<script type="text/javascript">										
+//<![CDATA[										
+var __enabledControlArray =  new Array('ctl00_txtFlag'	 'ctl00_txtRole'	 'ctl00_txtUserControls'	 'ctl00_txtEmpScreenIds'	 'ctl00_txtCompanyId'	 'ctl00_txtNonMedLabel'	 'ctl00_txtIsAttendanceLocation'	 'ctl00_txtCompanyIdExits'	 'ctl00_hfClientReport'	 'ctl00_hftxtBillableService'	 'ctl00_PopupMainBody_ddlLocations'
+//]]>										
+</script>										
+										
+										
+<script type="text/javascript">										
+//<![CDATA[										
+Sys.Application.initialize();										
+Sys.Application.add_init(function() {										
+    $create(Sys.UI._UpdateProgress	 {"associatedUpdatePanelId":null	displayAfter:500	dynamicLayout:true}	 null	 null	 $get("ctl00_updateProgressMaster"));				
+});										
+//]]>										
+</script>										
+</form>										
+</body>										
+										
+<script language="javascript" type="text/javascript" src="../Administrative/datetimepicker.js"></script>										
+										
+<script language="javascript" type="text/javascript" src="../javascript/validate2.js"></script>										
+										
+<script language="javascript" type="text/javascript" src="../scripts/LockMouse.js"></script>										
+										
+<script language="javascript" type="text/javascript" src="../javascript/wz_tooltip.js"></script>										
+										
+<script language="javascript" type="text/javascript" src="../javascript/google.js"></script>										
+										
+<script language="javascript" type="text/javascript" src="../javascript/google1.js"></script>										
+										
+</html>										
